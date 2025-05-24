@@ -3,8 +3,13 @@ default: &default
   encoding: unicode
   host: localhost
   port: 5432
+<<<<<<< HEAD
   user: lucas
   password: 12345
+=======
+  username: postgres
+  password: 'senha'
+>>>>>>> c0191442559e5809b680117698943a4e04fb9816
 
 development:
   <<: *default
