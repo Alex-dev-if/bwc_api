@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   host: localhost
   port: 5432
-  username: postgres
-  password: '1234'
+  user: lucas
+  password: 12345
 
 development:
   <<: *default
