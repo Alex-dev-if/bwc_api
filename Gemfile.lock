@@ -135,11 +135,7 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
-<<<<<<< HEAD
-    mini_portile2 (2.8.9)
-=======
     mini_portile2 (2.8.8)
->>>>>>> c0191442559e5809b680117698943a4e04fb9816
     minitest (5.25.5)
     msgpack (1.8.0)
     mutex_m (0.3.0)
