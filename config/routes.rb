@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :landings
   resources :copies
   resources :books
   resources :users, only: [:create]
