@@ -39,6 +39,6 @@ class LandingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def landing_params
-      params.require(:landing).permit(:landing_date, :return_date, :user_id, :copy_id)
+      params.require(:landing).permit(:landing_date, :return_date, :user_id, :copy_id, :status)
     end
 end
