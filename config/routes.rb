@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :fines
   resources :landings
   resources :copies
   resources :books
