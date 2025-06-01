@@ -15,6 +15,16 @@ class UsersController < ApplicationController
     end
   end
 
+  # DELETE /users/1 or /users/1.json
+  def destroy
+    @users = User.find(params[:id])
+    @users.destroy!
+    
+    respond_to do |format|
+      format.json { head :no_content }
+    end
+  end
+  
   private
 
   def user_params
