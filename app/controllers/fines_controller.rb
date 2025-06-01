@@ -2,6 +2,17 @@ class FinesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_fine, only: %i[ update update destroy ]
 
+  def by_user
+    user = User.find_by(id: params[:user_id])
+    
+    if user
+      fines = user.fines
+      render json: fines
+    else
+      render json: { error: 'Usuário não encontrado' }, status: :not_found
+    end
+  end
+
   # POST /fines or /fines.json
   def create
     fine = Fine.new(fine_params)
