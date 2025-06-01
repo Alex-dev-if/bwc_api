@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'returns/create'
   resources :fines
   resources :landings
   resources :copies
