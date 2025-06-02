@@ -3,7 +3,7 @@ class LandingsController < ApplicationController
   before_action :set_landing, only: %i[ update destroy ]
 
   def index 
-    @landings = Landing.joins(:user, copy: :book).select(Arel.sql("landings.*, books.title, users.name"))
+    @landings = Landing.joins(:user, copy: :book).select(Arel.sql("landings.*, books.*, users.name"))
     render json: @landings
   end
 
