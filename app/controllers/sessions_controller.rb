@@ -9,10 +9,9 @@ class SessionsController < ApplicationController
         user: {
           id: user.id,
           name: user.name,
-          email: user.email
+          email: user.email,
           role: user.role
         }
-        user:
       }, status: :ok
     else
       render json: { error: 'Invalid email or password' }, status: :unauthorized
