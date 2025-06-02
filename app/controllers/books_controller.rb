@@ -26,6 +26,7 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
     
     if book.save
+      book.Amount.times { Copy.create(status: "available", book:) } 
       render json: { message: 'Book created successfully', book: }, status: :created
     else
       render json: { errors: book.errors.full_messages }, status: :unprocessable_entity
@@ -60,6 +61,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:Titulo, :Autor, :Ano, :Editora, :ISBN, :Quantidade)
+      params.require(:book).permit(:Title, :Author, :YearRelease, :Publisher, :ISBN, :Amount)
     end
 end
