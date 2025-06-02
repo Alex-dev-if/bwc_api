@@ -2,6 +2,11 @@ class LandingsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_landing, only: %i[ update destroy ]
 
+  def index 
+    @landings = Landing.all
+    render json: @landings
+  end
+
   # POST /landings or /landings.json
   def create
     landing = Landing.new(landing_params)
