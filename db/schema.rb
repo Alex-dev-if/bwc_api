@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_01_201449) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_02_182401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_01_201449) do
 
   create_table "copies", force: :cascade do |t|
     t.string "code"
-    t.string "status"
+    t.string "status", default: "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "book_id"

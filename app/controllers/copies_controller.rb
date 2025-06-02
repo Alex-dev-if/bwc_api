@@ -12,7 +12,6 @@ class CopiesController < ApplicationController
   # POST /copies or /copies.json
   def create
     copy = Copy.new(copy_params)
-    copy.status = "available"
     
     if copy.save
       render json: { message: 'Copy created successfully', copy: }, status: :created
