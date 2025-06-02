@@ -2,6 +2,13 @@ class CopiesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_copy, only: %i[ update update destroy ]
 
+  def index
+    @copies = Copy.joins(:book)
+    @copies = @copies.where(status: params[:status]) if params[:status].present?
+
+    render json: @copies
+  end
+
   # POST /copies or /copies.json
   def create
     copy = Copy.new(copy_params)

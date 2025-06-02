@@ -1,4 +1,6 @@
 class Copy < ApplicationRecord
+  belongs_to :book
+  
   after_create :set_copy_code
 
   def set_copy_code
