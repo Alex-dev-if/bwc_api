@@ -24,7 +24,6 @@ class CopiesController < ApplicationController
   # PATCH/PUT /copies/1 or /copies/1.json
   def update
     @copy.status = "available"
-    puts copy_params
     
     if @copy.update(copy_params)
       render json: { message: 'Copy updated successfully', copy: @copy }, status: :ok
